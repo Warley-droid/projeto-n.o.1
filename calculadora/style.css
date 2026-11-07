@@ -1,5 +1,8 @@
-
 @charset "UTF-8";
+
+/* ========================================
+   1. RESET E CONFIGURAÇÕES GERAIS
+======================================== */
 
 * {
     margin: 0;
@@ -14,223 +17,451 @@ html {
 body {
     min-height: 100vh;
     min-height: 100dvh;
+
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+
     background: #0b1220;
     font-family: Arial, Helvetica, sans-serif;
+
     padding: 20px;
-    position: relative;
+    overflow-x: hidden;
 }
 
-/* CALCULADORA */
+
+/* ========================================
+   2. CALCULADORA
+======================================== */
 
 .calculadora {
-    background: #172b4d;
-    padding: 25px;
-    border-radius: 15px;
     width: 100%;
     max-width: 350px;
-    box-shadow: 0 5px 20px #0008;
+
+    background: #1e293b;
+
+    padding: 25px;
+    border-radius: 15px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+
+    margin: auto 0;
 }
+
+
+/* ========================================
+   3. TÍTULO
+======================================== */
 
 h1 {
-    font-family: 'Space Grotesk', sans-serif;
-    text-align: center;
-    font-size: clamp(26px, 5vw, 36px);
-    font-weight: 700;
-    letter-spacing: 1px;
     color: #f1f5f9;
-    margin-bottom: 15px;
+
+    font-family: 'Space Grotesk', Arial, sans-serif;
+    font-size: clamp(22px, 5vw, 30px);
+
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-/* TELA E MENSAGEM */
+
+/* ========================================
+   4. TELA DA CALCULADORA
+======================================== */
 
 #tela {
     width: 100%;
     height: 65px;
-    margin-bottom: 5px;
+
     padding: 10px;
+
+    background: #f1f5f9;
+    color: #0f172a;
+
     border: none;
     border-radius: 8px;
-    background: #f1f5f9;
-    font-size: clamp(20px, 4vw, 25px);
+
+    font-size: 25px;
     text-align: right;
-    min-width: 0;
+
+    margin-bottom: 10px;
 }
+
+
+/* ========================================
+   5. MENSAGEM
+======================================== */
 
 #mensagem {
-    height: 25px;
-    color: #ff6464;
-    font-size: 13px;
+    width: 100%;
+    min-height: 25px;
+
+    color: #ef4444;
+    font-size: 14px;
+
     text-align: center;
+    margin-bottom: 10px;
 }
 
-/* BOTÕES */
+
+/* ========================================
+   6. GRADE DOS BOTÕES
+======================================== */
 
 .botoes {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    grid-template-columns: repeat(4, 1fr);
+
     gap: 10px;
 }
 
+
+/* ========================================
+   7. BOTÕES
+======================================== */
+
 button {
+    width: 100%;
     height: 55px;
+
+    background: #334155;
+    color: #ffffff;
+
     border: none;
     border-radius: 8px;
-    background: #315b91;
-    color: white;
-    font-size: clamp(18px, 3vw, 22px);
+
+    font-size: 20px;
+    font-weight: bold;
+
     cursor: pointer;
-    transition: background .2s, transform .2s;
+
+    transition: background 0.2s, transform 0.2s;
 }
 
 button:hover {
-    background: #506987;
+    background: #475569;
 }
 
 button:active {
-    transform: scale(.95);
+    transform: scale(0.95);
 }
 
-/* BOTÕES ESPECIAIS */
+
+/* ========================================
+   8. BOTÕES ESPECIAIS
+======================================== */
 
 .especial {
-    background: #06b6d4;
+    background: #2563eb;
+}
+
+.especial:hover {
+    background: #1d4ed8;
 }
 
 .igual {
-    background: #10b981;
+    background: #16a34a;
+
     grid-row: span 2;
     height: 120px;
+}
+
+.igual:hover {
+    background: #15803d;
 }
 
 .zero {
     grid-column: span 2;
 }
 
-/* RODAPÉ */
+
+/* ========================================
+   9. RODAPÉ
+======================================== */
 
 footer {
-    grid-template-columns: 3fr 1fr 3fr;
-    grid-template-rows: 1fr;
-    display: grid;
-    position: fixed;
-    bottom: 65px;
-    left: 0;
     width: 100%;
-    text-align: center;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    gap: 15px;
+
+    padding-top: 25px;
+
     color: #f1f5f9;
     font-size: 14px;
     letter-spacing: 2px;
 }
 
-#tirripthioins{
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 2;
+/* Link que envolve a imagem de voltar */
 
-    align-self: center;
-    justify-self: center;
+footer a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    text-decoration: none;
 }
 
-#linhavertical{
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 2;
+/* Imagem de voltar */
 
-    align-self: center;
-    justify-self: center;
+#imgvoltar {
+    display: block;
 
-    display: inline-block;
+    max-width: 100%;
+    height: auto;
+
+    object-fit: contain;
+}
+
+/* Linha vertical */
+
+#linhavertical {
+    display: block;
+
     width: 2px;
     height: 25px;
+
     background-color: #94a3b8;
-    vertical-align: middle;
-    margin: 0 10px;
+
+    flex-shrink: 0;
 }
 
-#imgvoltar{
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 2;
+/* Texto do rodapé */
 
-    align-self: center;
-    justify-self: center;
+#tirripthioins {
+    margin: 0;
+
+    text-align: center;
 }
 
-/* CELULARES */
 
-@media (max-width: 400px) {
+/* ========================================
+   10. CELULARES MUITO PEQUENOS
+   Até 320px
+======================================== */
+
+@media screen and (max-width: 320px) {
+
     body {
-        padding: 12px 12px 45px;
+        padding: 10px;
     }
 
     .calculadora {
-        width: 100%;
-        padding: 18px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 21px;
+    }
+
+    #tela {
+        height: 55px;
+        font-size: 20px;
     }
 
     .botoes {
-        gap: 7px;
+        gap: 6px;
+    }
+
+    button {
+        height: 45px;
+        font-size: 16px;
+    }
+
+    .igual {
+        height: 96px;
+    }
+
+    footer {
+        gap: 8px;
+        font-size: 10px;
+        letter-spacing: 1px;
+        flex-wrap: wrap;
+    }
+
+    #linhavertical {
+        height: 20px;
+    }
+}
+
+
+/* ========================================
+   11. CELULARES
+   De 321px até 599px
+======================================== */
+
+@media screen and (min-width: 321px) and (max-width: 599px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .calculadora {
+        max-width: 350px;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 25px;
     }
 
     button {
         height: 50px;
+        font-size: 18px;
     }
 
     .igual {
-        height: 107px;
+        height: 110px;
     }
 
     footer {
+        gap: 12px;
         font-size: 12px;
+        letter-spacing: 1px;
     }
 }
 
-/* TABLETS */
 
-@media (min-width: 600px) and (max-width: 1024px) {
+/* ========================================
+   12. TABLETS
+   De 600px até 1024px
+======================================== */
+
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+
+    body {
+        padding: 25px;
+    }
+
     .calculadora {
         max-width: 380px;
-        padding: 30px;
+        padding: 28px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    #tela {
+        height: 70px;
+        font-size: 27px;
     }
 
     button {
         height: 60px;
+        font-size: 22px;
     }
 
     .igual {
         height: 130px;
     }
-}
 
-/* NOTEBOOKS E COMPUTADORES */
-
-@media (min-width: 1025px) and (max-width: 1920px) {
-    .calculadora {
-        max-width: 360px;
+    footer {
+        font-size: 15px;
     }
 }
 
-/* TELAS GRANDES E TVs */
 
-@media (min-width: 1921px) {
+/* ========================================
+   13. NOTEBOOKS E COMPUTADORES
+   De 1025px até 1440px
+======================================== */
+
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+
     .calculadora {
-        max-width: 450px;
+        max-width: 380px;
+        padding: 28px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    button {
+        height: 60px;
+        font-size: 22px;
+    }
+
+    .igual {
+        height: 130px;
+    }
+
+    footer {
+        font-size: 15px;
+    }
+}
+
+
+/* ========================================
+   14. TELAS GRANDES
+   De 1441px até 1920px
+======================================== */
+
+@media screen and (min-width: 1441px) and (max-width: 1920px) {
+
+    .calculadora {
+        max-width: 420px;
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+
+    #tela {
+        height: 75px;
+        font-size: 30px;
+    }
+
+    button {
+        height: 65px;
+        font-size: 24px;
+    }
+
+    .igual {
+        height: 140px;
+    }
+
+    footer {
+        font-size: 16px;
+    }
+}
+
+
+/* ========================================
+   15. TVs E MONITORES MUITO GRANDES
+   Acima de 1920px
+======================================== */
+
+@media screen and (min-width: 1921px) {
+
+    body {
+        padding: 40px;
+    }
+
+    .calculadora {
+        max-width: 480px;
         padding: 35px;
     }
 
     h1 {
-        font-size: 45px;
+        font-size: 40px;
     }
 
     #tela {
-        height: 80px;
-        font-size: 32px;
+        height: 85px;
+        font-size: 35px;
+    }
+
+    .botoes {
+        gap: 15px;
     }
 
     button {
@@ -239,27 +470,126 @@ footer {
     }
 
     .igual {
-        height: 160px;
+        height: 165px;
     }
 
     footer {
-        font-size: 20px;
-        bottom: 25px;
+        font-size: 18px;
     }
 }
 
-/* TELAS COM POUCA ALTURA */
 
-@media (max-height: 500px) {
+/* ========================================
+   16. DISPOSITIVOS COM POUCA ALTURA
+   Até 500px de altura
+======================================== */
+
+@media screen and (max-height: 500px) {
+
     body {
-        align-items: flex-start;
+        padding: 10px;
     }
 
     .calculadora {
-        margin: 10px auto 35px;
+        padding: 12px;
+    }
+
+    h1 {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    #tela {
+        height: 45px;
+        margin-bottom: 5px;
+    }
+
+    #mensagem {
+        min-height: 18px;
+        margin-bottom: 5px;
+    }
+
+    .botoes {
+        gap: 5px;
+    }
+
+    button {
+        height: 40px;
+    }
+
+    .igual {
+        height: 85px;
     }
 
     footer {
-        position: absolute;
+        padding-top: 10px;
+    }
+}
+
+
+/* ========================================
+   17. DISPOSITIVOS COM ALTURA EXTREMAMENTE BAIXA
+   Até 350px de altura
+======================================== */
+
+@media screen and (max-height: 350px) {
+
+    body {
+        padding: 5px;
+    }
+
+    .calculadora {
+        padding: 8px;
+    }
+
+    h1 {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+
+    #tela {
+        height: 35px;
+        font-size: 18px;
+        padding: 5px;
+    }
+
+    #mensagem {
+        min-height: 15px;
+        font-size: 11px;
+        margin-bottom: 3px;
+    }
+
+    button {
+        height: 30px;
+        font-size: 15px;
+    }
+
+    .igual {
+        height: 65px;
+    }
+
+    footer {
+        padding-top: 5px;
+        font-size: 10px;
+    }
+}
+
+
+/* ========================================
+   18. CELULARES NA HORIZONTAL
+======================================== */
+
+@media screen and (max-height: 500px) and (orientation: landscape) {
+
+    body {
+        padding: 8px 15px;
+    }
+
+    .calculadora {
+        max-width: 320px;
+    }
+
+    footer {
+        margin-top: 10px;
     }
 }
