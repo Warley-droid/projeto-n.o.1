@@ -1,0 +1,177 @@
+
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(30, 50, 40);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+div {
+    margin-top: 15px;
+}
+
+header{
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    background-color: rgb(30, 50, 40);
+    color: white;
+    padding: 20px 10px;
+}
+
+header a{
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+
+    justify-self: center;
+    align-self: center;
+    max-width: 100%;
+    height: auto;
+}
+
+header h1 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
+
+    justify-self: center;
+    align-self: center;
+}
+
+section {
+    background-color: rgb(62, 62, 195);
+    color: white;
+
+    width: 90%;
+    max-width: 700px;
+    min-width: 0;
+
+    padding: clamp(15px, 3vw, 30px);
+    margin: 0 auto 25px;
+
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.365);
+}
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+
+    justify-items: stretch;
+    align-items: center;
+}
+
+select {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+#seltab {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#seltab1 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#seltab2 {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#seltab3 {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    font-style: italic;
+    padding: 15px;
+    font-size: 16px;
+}
+
+/* Tablets */
+@media screen and (min-width: 600px) and (max-width: 900px) {
+    section {
+        width: 85%;
+        max-width: 650px;
+    }
+
+    #container {
+        gap: 20px;
+    }
+}
+
+/* Celulares */
+@media screen and (max-width: 599px) {
+    body {
+        font-size: 16px;
+        background-attachment: scroll;
+    }
+
+    header {
+        padding: 15px 10px;
+    }
+
+    section {
+        width: 92%;
+        padding: 18px;
+        border-radius: 8px;
+    }
+
+    #container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+    }
+
+    #seltab,
+    #seltab1,
+    #seltab2,
+    #seltab3 {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    select {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    footer {
+        font-size: 14px;
+    }
+}

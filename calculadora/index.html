@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+<main class="calculadora">
+        <h1>CALCULADORA</h1>
+        <input type="text" id="tela" readonly placeholder="0">
+        <p id="mensagem"></p>
+
+        <div class="botoes">
+            <button data-action="limpar" class="especial">C</button>
+            <button data-action="apagar" class="especial">⌫</button>
+            <button data-valor="÷">÷</button>
+            <button data-valor="×">×</button>
+
+            <button data-valor="7">7</button>
+            <button data-valor="8">8</button>
+            <button data-valor="9">9</button>
+            <button data-valor="-">−</button>
+
+            <button data-valor="4">4</button>
+            <button data-valor="5">5</button>
+            <button data-valor="6">6</button>
+            <button data-valor="+">+</button>
+
+            <button data-valor="1">1</button>
+            <button data-valor="2">2</button>
+            <button data-valor="3">3</button>
+            <button data-action="calcular" class="igual">=</button>
+
+            <button data-valor="0" class="zero">0</button>
+            <button data-valor=",">,</button>
+        </div>
+    </main>
+
+    <footer>
+    <p id="tirripthioins"><em>&copy;Tirripthioins</em></p>
+
+    <span id="linhavertical"></span>
+
+    <a id="imgvoltar" href="https://warley-droid.github.io/projeto-hora-js/" ><img src="imagens/btn-voltar.png" alt="Voltar"></a>
+    </footer>
+</body>
+</html>

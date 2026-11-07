@@ -1,0 +1,265 @@
+
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0b1220;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    position: relative;
+}
+
+/* CALCULADORA */
+
+.calculadora {
+    background: #172b4d;
+    padding: 25px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0 5px 20px #0008;
+}
+
+h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    text-align: center;
+    font-size: clamp(26px, 5vw, 36px);
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #f1f5f9;
+    margin-bottom: 15px;
+}
+
+/* TELA E MENSAGEM */
+
+#tela {
+    width: 100%;
+    height: 65px;
+    margin-bottom: 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #f1f5f9;
+    font-size: clamp(20px, 4vw, 25px);
+    text-align: right;
+    min-width: 0;
+}
+
+#mensagem {
+    height: 25px;
+    color: #ff6464;
+    font-size: 13px;
+    text-align: center;
+}
+
+/* BOTÕES */
+
+.botoes {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+}
+
+button {
+    height: 55px;
+    border: none;
+    border-radius: 8px;
+    background: #315b91;
+    color: white;
+    font-size: clamp(18px, 3vw, 22px);
+    cursor: pointer;
+    transition: background .2s, transform .2s;
+}
+
+button:hover {
+    background: #506987;
+}
+
+button:active {
+    transform: scale(.95);
+}
+
+/* BOTÕES ESPECIAIS */
+
+.especial {
+    background: #06b6d4;
+}
+
+.igual {
+    background: #10b981;
+    grid-row: span 2;
+    height: 120px;
+}
+
+.zero {
+    grid-column: span 2;
+}
+
+/* RODAPÉ */
+
+footer {
+    grid-template-columns: 3fr 1fr 3fr;
+    grid-template-rows: 1fr;
+    display: grid;
+    position: fixed;
+    bottom: 65px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #f1f5f9;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+#tirripthioins{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    align-self: center;
+    justify-self: center;
+}
+
+#linhavertical{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    align-self: center;
+    justify-self: center;
+
+    display: inline-block;
+    width: 2px;
+    height: 25px;
+    background-color: #94a3b8;
+    vertical-align: middle;
+    margin: 0 10px;
+}
+
+#imgvoltar{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    align-self: center;
+    justify-self: center;
+}
+
+/* CELULARES */
+
+@media (max-width: 400px) {
+    body {
+        padding: 12px 12px 45px;
+    }
+
+    .calculadora {
+        width: 100%;
+        padding: 18px;
+    }
+
+    .botoes {
+        gap: 7px;
+    }
+
+    button {
+        height: 50px;
+    }
+
+    .igual {
+        height: 107px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+}
+
+/* TABLETS */
+
+@media (min-width: 600px) and (max-width: 1024px) {
+    .calculadora {
+        max-width: 380px;
+        padding: 30px;
+    }
+
+    button {
+        height: 60px;
+    }
+
+    .igual {
+        height: 130px;
+    }
+}
+
+/* NOTEBOOKS E COMPUTADORES */
+
+@media (min-width: 1025px) and (max-width: 1920px) {
+    .calculadora {
+        max-width: 360px;
+    }
+}
+
+/* TELAS GRANDES E TVs */
+
+@media (min-width: 1921px) {
+    .calculadora {
+        max-width: 450px;
+        padding: 35px;
+    }
+
+    h1 {
+        font-size: 45px;
+    }
+
+    #tela {
+        height: 80px;
+        font-size: 32px;
+    }
+
+    button {
+        height: 75px;
+        font-size: 28px;
+    }
+
+    .igual {
+        height: 160px;
+    }
+
+    footer {
+        font-size: 20px;
+        bottom: 25px;
+    }
+}
+
+/* TELAS COM POUCA ALTURA */
+
+@media (max-height: 500px) {
+    body {
+        align-items: flex-start;
+    }
+
+    .calculadora {
+        margin: 10px auto 35px;
+    }
+
+    footer {
+        position: absolute;
+    }
+}

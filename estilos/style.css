@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(0, 145, 197);
+}
+
+header{
+    color: rgb(0, 200, 255);
+    font-family: cursive;
+    text-align: center;
+    margin-top: 7px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+p#phora{
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+}
+
+img#hdia{
+    height: 90px;
+    width: 90px;
+    border-radius: 100%;
+}
+
+img#diasem{
+    height: 250px;
+    border-radius: 10px;
+    display: block;
+    margin: auto;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+#containerapps {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 5px;
+    justify-items: center;
+    justify-content: center;
+}
+
+.icon-item {
+    /* Configuração geral para a div completa dos itens (nome+imagens) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.imgicon {
+    /* Configuração geral para as imagens dos itens */
+    height: 45px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    overflow: hidden;
+    outline: 1px solid black;
+    border-radius: 5px;
+}
+
+.nome-app {
+    /* Configuração geral para os nomes dos itens */
+    margin-top: 5px;
+    font-size: 14px;
+    color: white;
+}
+
+#icon-item1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+#icon-item2 {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+#icon-item3 {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+}
+
+p#copy{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+}
